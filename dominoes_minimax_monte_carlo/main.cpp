@@ -17,13 +17,15 @@
 #include "MinimaxSearch.hpp"
 #include "MonteCarloDataGenerator.hpp"
 
-static const int kNumberOfGames = 1;
-static const int kNumberOfSamples = 100; // max with default game settings is 21 choose 7 = 116280
+static const int kNumberOfGames = 1; // to handle all initial max player hands with default game settings, use (28 choose 7) = 1184040
+static const int kNumberOfSamples = 100; // max with default game settings is (21 choose 7) = 116280
 static const bool kRunFullMinimax = true;
 static const bool kRecordMinimaxPath = true;
 
 int main(int argc, const char * argv[]) {
     const GameFoundation gameFoundation;
+
+    IntVector maxHandIndexList = CombinationListCreator::indexList(gameFoundation.numberOfDominoes, gameFoundation.handSize, true);
 
     std::vector<std::chrono::duration<double>> gameDurations;
 
@@ -32,7 +34,7 @@ int main(int argc, const char * argv[]) {
     for (int currentGameNumber = 0; currentGameNumber < kNumberOfGames; currentGameNumber++) {
         const auto gameStart = std::chrono::high_resolution_clock::now();
 
-        const Game game(gameFoundation); // new game with hands and possible tiles set
+        const Game game = Game::gameWithStartingMaxPayerHandNumber(gameFoundation, maxHandIndexList[currentGameNumber]);
         const GameState initialState(game);
 
         // *** Game Tree Data

@@ -155,7 +155,7 @@ MonteCarloData MonteCarloDataGenerator::generateData(const Game &game, const Gam
         const int opponentHandSize = isMaxPlayer ? (int)mostRecentState.minPlayerHand.size() : (int)mostRecentState.maxPlayerHand.size();
         const DominoPointerVector& possibleTiles = isMaxPlayer ? workGame.possibleMinPlayerTiles : workGame.possibleMaxPlayerTiles;
 
-        IntVectorVector indexCombos = CombinationListCreator().makeCombinationList((int)possibleTiles.size(), opponentHandSize);
+        IntVectorVector indexCombos = CombinationListCreator().listOfCombinationIndices((int)possibleTiles.size(), opponentHandSize);
         const unsigned int seed = (unsigned int)std::chrono::system_clock::now().time_since_epoch().count();
         std::shuffle(std::begin(indexCombos), std::end(indexCombos), std::default_random_engine(seed));
 

@@ -13,9 +13,14 @@ typedef std::vector<Domino const*> DominoPointerVector;
 typedef std::vector<Domino> DominoVector;
 
 class Game {
-    DominoPointerVector shuffledDominoes;
+private:
+    Game(const GameFoundation& gameFoundation); // makes random game
+    Game(const GameFoundation& gameFoundation, const int maxPlayerHandNumber); // makes random game with specified max hand
+
+    void _assignHands(const int handSize, const int numberOfDominoes, DominoPointerVector& dominoes);
 public:
-    Game(const GameFoundation& gameFoundation);
+    static Game randomGame(const GameFoundation& gameFoundation);
+    static Game gameWithStartingMaxPayerHandNumber(const GameFoundation& gameFoundation, const int maxPlayerHandNumber);
 
     const GameFoundation& gameFoundation;
     DominoPointerVector maxPlayerHand;
