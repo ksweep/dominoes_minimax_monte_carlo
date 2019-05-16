@@ -33,6 +33,7 @@
 		A82B2A112284BEE700C0A371 /* MinimaxSearch.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MinimaxSearch.hpp; sourceTree = "<group>"; };
 		A83A2AD3227E89B200E41BB3 /* MinimaxData.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MinimaxData.hpp; sourceTree = "<group>"; };
 		A83C75BB228B6E790082E7BD /* MonteCarloData.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MonteCarloData.hpp; sourceTree = "<group>"; };
+		A8597E25228DE632008D4010 /* CantorPairing.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CantorPairing.hpp; sourceTree = "<group>"; };
 		A85B928F22839CEF007F6B4D /* CombinationListCreator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CombinationListCreator.cpp; sourceTree = "<group>"; };
 		A85B929022839CEF007F6B4D /* CombinationListCreator.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CombinationListCreator.hpp; sourceTree = "<group>"; };
 		A85B92932283DDE9007F6B4D /* MonteCarloDataGenerator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MonteCarloDataGenerator.cpp; sourceTree = "<group>"; };
@@ -130,6 +131,7 @@
 				A8690558227C90BD007C90C5 /* Game.cpp */,
 				A8690556227C015A007C90C5 /* GameState.hpp */,
 				A8690555227C015A007C90C5 /* GameState.cpp */,
+				A8597E25228DE632008D4010 /* CantorPairing.hpp */,
 			);
 			path = Model;
 			sourceTree = "<group>";

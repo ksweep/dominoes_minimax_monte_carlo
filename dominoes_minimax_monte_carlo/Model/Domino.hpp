@@ -10,6 +10,8 @@
 #include <utility>
 #include <string>
 
+#include "CantorPairing.hpp"
+
 typedef std::pair<int, int> IntPair;
 
 struct Domino {
@@ -26,6 +28,9 @@ struct Domino {
     }
     inline std::string prettyString() const {
         return "(" + std::to_string(ends.first) + ", " + std::to_string(ends.second) + ")";
+    }
+    inline int pairingValue() const {
+        return CantorPairing::valueForPair(ends);
     }
 };
 

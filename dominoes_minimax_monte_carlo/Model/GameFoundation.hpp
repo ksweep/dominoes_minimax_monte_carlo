@@ -31,6 +31,7 @@ struct GameFoundation {
             for (int j = i; j <= maxDominoSuit; j++) {
                 totalPoints += (i + j);
                 dominoSet.push_back(Domino(std::make_pair(i, j)));
+                assert(CantorPairing::pairForValue(dominoSet.back().pairingValue()) == dominoSet.back().ends);
             }
         }
         infinity = totalPoints + 1;
